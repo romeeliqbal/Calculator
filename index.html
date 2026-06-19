@@ -3,73 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Modern Calculator</title>
+  <title>Neon Cyber Scientific Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="calculator-container">
     <div class="calculator">
+      <div class="tabs-container">
+        <button class="tab-btn active" onclick="switchMode('standard')">STANDARD</button>
+        <button class="tab-btn" onclick="switchMode('scientific')">SCIENTIFIC</button>
+      </div>
+      
       <div class="display-wrapper">
+        <div class="display-small" id="history"></div>
         <div class="display" id="display">0</div>
       </div>
+
+      <div class="scientific-buttons" id="scientificButtons">
+        <button class="btn btn-sci" onclick="appendFunction('sin')">sin</button>
+        <button class="btn btn-sci" onclick="appendFunction('cos')">cos</button>
+        <button class="btn btn-sci" onclick="appendFunction('tan')">tan</button>
+        <button class="btn btn-sci" onclick="appendFunction('sqrt')">√</button>
+        
+        <button class="btn btn-sci" onclick="appendFunction('log')">log</button>
+        <button class="btn btn-sci" onclick="appendFunction('ln')">ln</button>
+        <button class="btn btn-sci" onclick="toggleRadDeg()">RAD</button>
+        <button class="btn btn-sci" onclick="appendNumber(Math.PI.toString().slice(0, 5))">π</button>
+        
+        <button class="btn btn-sci" onclick="appendOperator('**')">x^y</button>
+        <button class="btn btn-sci" onclick="appendNumber(Math.E.toString().slice(0, 5))">e</button>
+        <button class="btn btn-sci" onclick="appendFunction('factorial')">x!</button>
+        <button class="btn btn-sci" onclick="appendFunction('reciprocal')">1/x</button>
+        
+        <button class="btn btn-sci" onclick="appendFunction('asin')">asin</button>
+        <button class="btn btn-sci" onclick="appendFunction('acos')">acos</button>
+        <button class="btn btn-sci" onclick="appendFunction('atan')">atan</button>
+        <button class="btn btn-sci" onclick="appendFunction('percent')">%</button>
+      </div>
+      
       <div class="buttons">
         <button class="btn btn-clear" onclick="clearDisplay()">
-          <span class="btn-icon">C</span>
+          <span>C</span>
         </button>
         <button class="btn btn-operator" onclick="appendOperator('/')">
-          <span class="btn-icon">÷</span>
+          <span>÷</span>
         </button>
         <button class="btn btn-operator" onclick="appendOperator('*')">
-          <span class="btn-icon">×</span>
+          <span>×</span>
         </button>
         <button class="btn btn-delete" onclick="deleteLast()">
-          <span class="btn-icon">⌫</span>
+          <span>⌫</span>
         </button>
         
         <button class="btn" onclick="appendNumber('7')">
-          <span class="btn-icon">7</span>
+          <span>7</span>
         </button>
         <button class="btn" onclick="appendNumber('8')">
-          <span class="btn-icon">8</span>
+          <span>8</span>
         </button>
         <button class="btn" onclick="appendNumber('9')">
-          <span class="btn-icon">9</span>
+          <span>9</span>
         </button>
         <button class="btn btn-operator" onclick="appendOperator('-')">
-          <span class="btn-icon">−</span>
+          <span>−</span>
         </button>
         
         <button class="btn" onclick="appendNumber('4')">
-          <span class="btn-icon">4</span>
+          <span>4</span>
         </button>
         <button class="btn" onclick="appendNumber('5')">
-          <span class="btn-icon">5</span>
+          <span>5</span>
         </button>
         <button class="btn" onclick="appendNumber('6')">
-          <span class="btn-icon">6</span>
+          <span>6</span>
         </button>
         <button class="btn btn-operator" onclick="appendOperator('+')">
-          <span class="btn-icon">+</span>
+          <span>+</span>
         </button>
         
         <button class="btn" onclick="appendNumber('1')">
-          <span class="btn-icon">1</span>
+          <span>1</span>
         </button>
         <button class="btn" onclick="appendNumber('2')">
-          <span class="btn-icon">2</span>
+          <span>2</span>
         </button>
         <button class="btn" onclick="appendNumber('3')">
-          <span class="btn-icon">3</span>
+          <span>3</span>
         </button>
         <button class="btn btn-equals" onclick="calculate()" style="grid-row: span 2;">
-          <span class="btn-icon">=</span>
+          <span>=</span>
         </button>
         
         <button class="btn" onclick="appendNumber('0')" style="grid-column: span 2;">
-          <span class="btn-icon">0</span>
+          <span>0</span>
         </button>
         <button class="btn" onclick="appendNumber('.')">
-          <span class="btn-icon">.</span>
+          <span>.</span>
         </button>
       </div>
     </div>
